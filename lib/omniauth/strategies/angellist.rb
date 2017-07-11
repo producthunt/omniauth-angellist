@@ -42,6 +42,10 @@ module OmniAuth
                  'skills' => raw_info['skills'] })
       end
 
+      extra do
+        { :raw_info => raw_info }
+      end
+
       credentials do
         hash = { 'token' => access_token.token }
         hash['refresh_token'] = access_token.refresh_token if
